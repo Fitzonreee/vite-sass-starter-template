@@ -1,19 +1,11 @@
-import { resolve } from "path";
-import { defineConfig } from "vite";
+import { build } from "vite";
 import htmlPurge from "vite-plugin-html-purgecss";
 
-export default defineConfig({
+export default {
   plugins: [htmlPurge()],
-  root: resolve(__dirname, "src/"),
+  root: 'src',
   build: {
-    outDir: "../dist",
-    emptyOutDir: true,
-    rollupOptions: {
-      input: {
-        home: resolve(__dirname, "src/index.html"),
-        about: resolve(__dirname, "src/about/index.html"),
-        contact: resolve(__dirname, "src/contact/index.html"),
-      },
-    },
-  },
-})
+    outDir: '../dist',
+    emptyOutDir: true
+  }
+};
